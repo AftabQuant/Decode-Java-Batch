@@ -54,13 +54,10 @@ class Airport {
 }
 public class TruePolymorphism {
     public static void main(String[] args) {
-        CargoPlane c = new CargoPlane();
-        FighterPlane f = new FighterPlane();
-        NormalPlane n = new NormalPlane();
         Airport a = new Airport();
-        a.print(c);
-        a.print(f);
-        a.print(n);
+        a.print(new CargoPlane());
+        a.print(new FighterPlane());
+        a.print(new NormalPlane());
 
 
     }
