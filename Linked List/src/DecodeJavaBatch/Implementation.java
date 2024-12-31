@@ -1,10 +1,10 @@
-package FinalYear;
+package DecodeJavaBatch;
 
 class linkedList {
     int size = 0;
-    Node head=null; Node tail=null;
+    ListNode head=null; ListNode tail=null;
     public void insertAtStart(int val) {
-        Node temp = new Node(val);
+        ListNode temp = new ListNode(val);
         if(head==null) head = tail = temp;
         else {
             temp.next = head;
@@ -13,7 +13,7 @@ class linkedList {
         size++;
     }
     public void insertAtEnd(int val) {
-        Node temp = new Node(val);
+        ListNode temp = new ListNode(val);
         if(head==null) head = temp;
         else  tail.next = temp;
         tail = temp;
@@ -24,8 +24,8 @@ class linkedList {
             insertAtEnd(val);
             return;
         }
-        Node a = head;
-        Node temp = new Node(val);
+        ListNode a = head;
+        ListNode temp = new ListNode(val);
         for(int i=0; i<idx-1; i++) {
             a = a.next;
         }
@@ -40,7 +40,7 @@ class linkedList {
     }
     public void deleteAtEnd() {
         if(head==null) return;
-        Node temp = head;
+        ListNode temp = head;
         while(temp.next.next!=null) {
             temp = temp.next;
         }
@@ -50,13 +50,13 @@ class linkedList {
     }
     public void deleteAt(int idx) {
         if(head==null) return;
-        Node temp = head;
+        ListNode temp = head;
         for(int i=0; i<idx-1; i++) temp = temp.next;
         temp.next = temp.next.next;
         size--;
     }
     public void display() {
-        Node temp = head; // Shallow Copy
+        ListNode temp = head; // Shallow Copy
         while(temp != null) {
             System.out.print(temp.val+" ");
             temp = temp.next;
